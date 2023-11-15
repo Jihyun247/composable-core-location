@@ -18,14 +18,20 @@ let package = Package(
   ],
   dependencies: [
     .package(
-      url: "https://github.com/pointfreeco/swift-composable-architecture",
-      .upToNextMajor(from: "0.43.0"))
+      url: "https://github.com/pointfreeco/swift-dependencies",
+      .upToNextMajor(from: "1.0.0")
+    ),
+    .package(
+      url: "https://github.com/pointfreeco/swift-concurrency-extras",
+      .upToNextMajor(from: "1.0.0")
+    ),
   ],
   targets: [
     .target(
       name: "ComposableCoreLocation",
       dependencies: [
-        .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+        .product(name: "Dependencies", package: "swift-dependencies"),
+        .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras"),
       ]
     ),
     .testTarget(
